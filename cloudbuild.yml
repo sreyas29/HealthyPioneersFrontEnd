@@ -1,0 +1,15 @@
+steps:
+  #install node package
+  - name: 'gcr.io/cloud-builders/npm:node-18.12.0'
+    args: ['install']
+
+  #build productive files
+  - name: 'gcr.io/cloud-builders/npm:node-18.12.0'
+    args: ['run','build','--prod']
+
+  #deploy to google cloud app engine
+  - name: 'gcr.io/cloud-builders/npm:node-18.12.0'
+    args: ['app','deploy','--version=prod']
+
+options:
+  logging: CLOUD_LOGGING_ONLY

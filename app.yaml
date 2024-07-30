@@ -1,0 +1,20 @@
+runtime: python
+api_version: 1
+threadsafe: yes
+
+handlers:
+  - url: /
+    static_files: dist/angular-ecommerce/index.html
+    upload: dist/angular-ecommerce/index.html
+  - url: /
+    static_dir: dist/angular-ecommerce
+
+skip_files:
+  - e2e/
+  - node_module
+  - src/
+  - ^(.*/)?\..*$
+  - ^(.*/)?.*\.json$
+  - ^(.*/)?.*\.md$
+  - ^(.*/)?.*\.yml$
+  - ^LICENSE
